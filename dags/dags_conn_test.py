@@ -1,7 +1,7 @@
 from airflow import DAG
 import datetime
 import pendulum
-from airflow.operators.bash import EmptyOperator
+from airflow.operators.empty import EmptyOperator
 
 with DAG(
     dag_id="dags_bash_operator",
@@ -44,7 +44,7 @@ with DAG(
     t1 >> [t2, t4] >> t4
     t5 >> t4
     [t4, t7] >> t6 >> t8
-    
+
 
 
 
